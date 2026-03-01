@@ -5,6 +5,8 @@ import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
     static void main(String[] args) {
@@ -21,6 +23,11 @@ public class PrincipalComListas {
         lista.add(favorito);
         lista.add(outro);
         lista.add(serie);
+
+        Collections.sort(lista);
+        System.out.println("Lista:"  + lista);
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Lista por ano:"  + lista);
 
         for(Titulo titulo : lista){
             System.out.println(titulo.getNome());
